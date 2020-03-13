@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sun.istack.internal.localization.NullLocalizable;
+import net.vz.mongodb.jackson.Id;
 import org.bson.types.ObjectId;
 import org.hibernate.validator.constraints.NotBlank;
 
@@ -17,7 +18,7 @@ public class Employee_data
 
 
     @JsonIgnoreProperties(ignoreUnknown = true)
-
+    @Id
     private String id = UUID.randomUUID().toString();
 
     @NotBlank
@@ -65,7 +66,7 @@ public class Employee_data
         result = 31 * result + (age != null ? age.hashCode() : 0);
         return result;
     }
-    
+
     public String getId() {
         return id;
     }

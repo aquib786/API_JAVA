@@ -33,13 +33,9 @@ public class employee extends Service<EmployeeConfiguration> {
 
 
         environment.addResource(new Employee_Resource(data));
-        //environment.addResource(new GetResource(data));
-
     }
 
     public static void main(String[] args) throws Exception {
-        ObjectMapper objectMapper = new ObjectMapper();
-        objectMapper.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
        new employee().run(args);
 
     }

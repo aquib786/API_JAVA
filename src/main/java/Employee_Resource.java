@@ -41,16 +41,20 @@ public class Employee_Resource{
         return Response.ok(data).build();
     }
     @GET
+    @Path("details")
     @Timed
     public List<Employee_data> index() {
-        //return Arrays.asList(new Employee_data("Mohammad Aquib" , "22"));
         DBCursor<Employee_data> dbCursor = collection.find();
         List<Employee_data> blogs = new ArrayList<Employee_data>();
         while (dbCursor.hasNext()) {
             Employee_data blog = dbCursor.next();
-
+            
             blogs.add(blog);
         }
         return blogs;
     }
+
+
+
+
 }

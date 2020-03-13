@@ -35,7 +35,7 @@ public class GetResource {
     }
 
     @GET
-    @Path("Details")
+    @Path("dummy")
     @Timed
 
     public List<Employee_data> details(){
